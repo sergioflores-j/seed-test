@@ -1,0 +1,15 @@
+service: seed-test-users
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  region: sa-east-1
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+     - http:
+        path: users
+        method: get
