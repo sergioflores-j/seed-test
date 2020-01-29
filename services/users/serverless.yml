@@ -1,5 +1,8 @@
 service: seed-test-users
 
+package:
+  individually: true
+
 provider:
   name: aws
   runtime: nodejs12.x
@@ -13,3 +16,6 @@ functions:
      - http:
         path: users
         method: get
+
+plugins:
+  - serverless-plugin-reducer
